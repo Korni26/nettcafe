@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    min-height: 120vh;
+}
+
+::-webkit-scrollbar {
+    direction: rtl;
+    background-color: #fff;
+    margin-top: 10vw;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    position: fixed;
+    left: 0;
+    background: #02683D;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+.logo {
+    position: fixed;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(multimedia/coffee-g49a45a342_1280.png);
+    background-size: cover;
+    border-bottom: 5px solid #02683D;
+    border-right: 5px solid #02683D;
+}
+
+.topBar {
+    z-index: 2;
+    position: fixed;
+    left: 10vw;
+    width: 90vw;
+    height: 10vw;
+    background-color: #fff;
+    border-bottom: 5px solid #02683D;
+}
+
+.loggInBtn{
+    position: absolute;
+    z-index: 1;
+    width: 10vw;
+    height: 10vw;
+    right: 0;
+    background-color: red;
+    border-bottom: 5px solid #02683D;
+}
+
+.menuBox {
+    position: fixed;
+    top: 10vw;
+    width: 10vw;
+    height: 90vw;
+    border-right: 5px solid #02683D;
+}
+
+.menuBox .adminOpt1 a{
+    width: 100%;
+    height: 5vw;
+    text-align: center;
+    color: aqua;
+    background-color: #02683D;
+}
+
+.contentBox {
+    position: relative;
+    top: 10vw;
+    left: 10vw;
+    width: 90vw;
+    min-height: 90vw;
+    border-bottom: 3vw;
+}
+
+.loggInForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+.loggInForm *{
+    width: 50%;
+    text-align: center;
+    font-size: 2vw;
+    color: #02683D;
+}
+
+.mainContent{
+    width: 100%;
+    height: 30vw;
+   background-image: url(multimedia/muffin-gf361af4f3_1280.jpg);
+   background-size: cover;
+   background-position: 0 50%;
+   background-repeat: no-repeat;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product{
+    width: 25vw;
+    height: 25vw;
+    margin-top: 3vw;
+    background-color: #ddd;
+}
+
+.productPicture{
+    width: 100%;
+    height: 75%;
+    background-color: #555;
+}
+
+.productName{
+    z-index: 1;
+    width: 100%;
+    height: 10%;
+    margin: 1vw 1vw 0 1vw;
+}
+
+.productDescription{
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 25%;
+    transition: 1s;
+}
+
+.productDescription p{
+    margin: 1vw 1vw 0 1vw;
+    font-size: 1.2vw;
+}
+
+.addCartBtnWrap{
+    display: flex;
+    align-items: flex-end;
+}
+
+.addToCartBtn{
+    position: relative;
+    min-width: 6vw;
+    min-height: 2vw;
+    margin: 0 1vw 1vw 0;
+    border-radius: 3vw;
+    bottom: 0;
+    right: 0;
+}
+
+.aboutProduct{
+    opacity: 0;
+    position: relative;
+    min-height: 25%;
+    border: 1vw;
+    background-color: #ddd;
+}
+
+.aboutProduct p{
+    margin: 1vw 1vw 3vw 1vw;
+}
+
+/* .product:hover{
+    cursor: pointer;
+}
+
+.product:hover .productPicture{
+    height: 60%;
+    transition: 1s;
+}
+
+.product:hover .productDescription{
+    height: 50%;
+    top: 50%;
+    opacity: 1;
+    background-color: #ddd;
+    transition-timing-function: ease;
+}
+
+.product:hover .aboutProduct{
+    opacity: 1;
+}
+
+ .product:hover .productPicture{
+    transform: scale(1.1);
+} */
