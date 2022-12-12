@@ -60,8 +60,5 @@ if(isset($_POST['submit'])){
         var_dump('ikke bra');
     }
 }
-
-
-
 ?>
 </html>
