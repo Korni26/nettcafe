@@ -16,7 +16,9 @@
     </a>
     <div class="topBar">
 	<a href="loggInPage.php">
-        <div class="loggInBtn"></div>
+        <div class="loggInBtn">
+            <p>logg in</p>
+        </div>
 		</a>
     </div>
     <div class="menuBox"></div>
@@ -24,13 +26,9 @@
 
         <div class="mainContent"></div>
 
-        <div class="row"></div>
-    </div>
-    </div>
+        <div class="row">
 
-</body>
-
-<?php
+        <?php
 
         $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
           or die('Error connecting to MySQL server.');
@@ -62,6 +60,14 @@
         echo '</div>';
         }
 ?>
+
+        </div>
+    </div>
+    </div>
+
+</body>
+
+
 
 
 </html>

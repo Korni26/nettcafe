@@ -13,17 +13,25 @@
     </a>
     <div class="topBar">
 	<a href="loggInPage.php">
-        <div class="loggInBtn"></div>
+        <div class="loggInBtn">
+            <p>logg in</p>
+        </div>
 		</a>
     </div>
     <div class="menuBox">
         <div class="adminOpt1">
-            <a href="">Legg til product</a>
+            <a href="leggtil.php">Legg til product</a>
+        </div>
+        <div class="adminOpt1">
+            <a href="slett.php">Slett produkt</a>
+        </div>
+        <div class="adminOpt1">
+            <a href="rediger.php">Rediger produkt</a>
         </div>
     </div>
     <div class="contentBox">
     <div class="row">
-</body>
+
 
 <?php
 
@@ -82,5 +90,5 @@
 ?>
 
 </div>
-
+</body>
 </html>
