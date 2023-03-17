@@ -99,9 +99,12 @@
                     or die('Error querying database.');
 
                 mysqli_close($dbc);
+<<<<<<< HEAD
 
                 header("Refresh:0");
 
+=======
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
             }
 
             if (isset($_POST['deletebtn'])) {

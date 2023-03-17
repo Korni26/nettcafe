@@ -45,7 +45,12 @@
             <br>
             <button type="submit" name="submit" class="leggtilbtn">Legg til produkt</button>
         </form>
+<<<<<<< HEAD
 
+=======
+    </div>
+</body>
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 <?php
 if(isset($_POST['submit'])){
 $productName = $_POST['productName'];
@@ -63,14 +68,25 @@ $result = mysqli_query($dbc, $query)
 mysqli_close($dbc);
 
 if($result){
+<<<<<<< HEAD
     //Gyldig login]
+=======
+    //Gyldig login
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
     echo "Nytt produkt lagt til! Trykk <a href='index.php'>her</a> for å gå tilbake til hovedsiden.";
 }else{
     //Ugyldig login
     echo "Noe gikk galt, prøv igjen!";
 }
+<<<<<<< HEAD
 }
 ?>
     </div>
 </body>
+=======
+
+}
+?>
+
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 </html>

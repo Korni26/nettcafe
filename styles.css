@@ -27,7 +27,11 @@ a {
 }
 
 
+<<<<<<< HEAD
 /* header og meny */
+=======
+  /* header og meny */
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 .logo {
     position: fixed;
     width: 10vw;
@@ -58,7 +62,11 @@ a {
     border-left: 5px solid #02683D;
 }
 
+<<<<<<< HEAD
 .loggInBtn p {
+=======
+.loggInBtn p{
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,7 +85,11 @@ a {
     border-right: 5px solid #02683D;
 }
 
+<<<<<<< HEAD
 .menuBox .adminOpt1 {
+=======
+.menuBox .adminOpt1{
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +99,11 @@ a {
     border-bottom: 5px solid #fff;
 }
 
+<<<<<<< HEAD
 .menuBox .adminOpt1 a {
+=======
+.menuBox .adminOpt1 a{
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
     width: 10vw;
     height: 5vw;
     text-align: center;
@@ -95,15 +111,24 @@ a {
     color: #fff;
 }
 
+<<<<<<< HEAD
 .menuBox .active a {
+=======
+.menuBox .active a{
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
     color: #02683D;
     background-color: #fff;
     border-right: 5px solid #02683D;
     border-bottom: 5px solid #fff;
 }
 
+<<<<<<< HEAD
 .topbox {
     border-top: 2.5px solid #02683D;
+=======
+.topbox{
+    border-top: 2.5px solid #02683D ;
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 }
 
 .contentBox {
@@ -130,12 +155,28 @@ a {
     color: #02683D;
 }
 
+<<<<<<< HEAD
 .leggTilBoks {
+=======
+.leggTilBoks{
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 90vw;
+<<<<<<< HEAD
+=======
+}
+
+.mainContent{
+    width: 100%;
+    height: 30vw;
+   background-image: url(multimedia/muffin-gf361af4f3_1280.jpg);
+   background-size: cover;
+   background-position: 0 50%;
+   background-repeat: no-repeat;
+>>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 }
 
 .mainContent {
