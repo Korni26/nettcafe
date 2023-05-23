@@ -10,3 +10,12 @@ CREATE TABLE adminuser (
     brukernavn VARCHAR(255), 
     passord VARCHAR(255)
     ); 
+
+ CREATE TABLE reports (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    navn VARCHAR(255), 
+    mail VARCHAR(255),
+    content VARCHAR(255)
+    );    
+
+    INSERT INTO adminuser (brukernavn, passord) VALUES ('brukernavn', 'passord')

@@ -1,3 +1,10 @@
+<?php
+session_start();
+if( !isset($_SESSION["brukernavn"]) ){
+header("location:loggInPage.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,17 +45,14 @@
         <div class="row">
             <table>
                 <tr>
-<<<<<<< HEAD
                     <th>id</th>
-=======
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
                     <th>Produkt navn</th>
                     <th>Produkt beskrivelse</th>
                     <th>Pris</th>
                 </tr>
                 <?php
 
-                $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+                $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
                     or die('Error connecting to MySQL server.');
 
                 $query = "SELECT id, productName, productDescription, price from products";
@@ -61,12 +65,12 @@
                 foreach ($result as $row) {
                     echo '<tr>';
                     echo '<td>';
-<<<<<<< HEAD
+
                     echo $row["id"];
                     echo '</td>';
                     echo '<td>';
-=======
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
+
+
                     echo $row['productName'];
                     echo '</td>';
                     echo '<td>';
@@ -77,7 +81,7 @@
                     echo '</td>';
                     echo '<td>';
                     echo '<form method="post" class="addCartBtnWrap">';
-<<<<<<< HEAD
+
                     echo '<input type="hidden" name="id" value="';
                     echo $row["id"];
                     echo '">';
@@ -85,15 +89,15 @@
                     echo '<input type="submit" name="';
                     echo $row['id'];
                     echo '" class="addToCartBtn" value="Rediger"/>';
-=======
+
                     echo '<input type="submit" name="
                 " class="addToCartBtn" value="Rediger"/>';
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
+
                     echo '</form>';
                     echo '</td>';
                     echo '</tr>';
                 }
-<<<<<<< HEAD
+
                 ?>
 
             </table>
@@ -162,12 +166,11 @@
 
 
     </div>
-=======
 
-                ?>
+
             </table>
         </div>
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
+
 </body>
 
 </html>

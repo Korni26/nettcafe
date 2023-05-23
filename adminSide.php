@@ -1,3 +1,10 @@
+<?php
+session_start();
+if( !isset($_SESSION["brukernavn"]) ){
+header("location:loggInPage.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +21,7 @@
     <div class="topBar">
 	<a href="loggInPage.php">
         <div class="loggInBtn">
-            <p>logg in</p>
+            <p>logg ut</p>
         </div>
 		</a>
     </div>
@@ -35,7 +42,7 @@
 
 <?php
 
-        $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+        $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
           or die('Error connecting to MySQL server.');
 
         $query = "SELECT id, productName, productDescription, price from products";
@@ -63,29 +70,6 @@
                 echo '</div>';
             echo '</div>';
         echo '</div>';
-
-
-
-
-            // echo "<tr>";
-
-            // echo "<td>";
-            // echo $row['id'];
-            // echo "</td>";
-
-            // echo "<td>";    
-            // echo $row['productName'];
-            // echo "</td>";
-            
-            // echo "<td>";
-            // echo $row['productDescription'];
-            // echo "</td>";
-            
-            // echo "<td>";
-            // echo $row['price'];
-            // echo "</td>";
-
-            // echo "</tr>";
         }
 ?>
 

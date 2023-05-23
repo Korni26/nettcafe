@@ -1,3 +1,8 @@
+<?php
+session_start();
+unset($_SESSION["brukernavn"]);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +45,7 @@ if(isset($_POST['submit'])){
     $brukernavn = $_POST['brukernavn'];
     $passord = $_POST['passord'];
 
-    $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+    $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
         or die('Error connecting to MySQL server');
 
     $query = "SELECT brukernavn, passord from adminuser where brukernavn='$brukernavn' and passord='$passord'";
@@ -53,10 +58,11 @@ if(isset($_POST['submit'])){
     // var_dump($result);
 
     if($result->num_rows > 0){
+        session_start();
+        $_SESSION['brukernavn'] = $brukernavn;
         header('location: adminSide.php');
-        var_dump('bra');
     }else{
-        header('location: ikkeBra.html');
+        header('location: loggInPage.php');
         var_dump('ikke bra');
     }
 }

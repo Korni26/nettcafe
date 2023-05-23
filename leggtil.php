@@ -1,4 +1,11 @@
-<!DOCTYPE html>
+<?php
+session_start();
+if( !isset($_SESSION["brukernavn"]) ){
+header("location:loggInPage.php");
+}
+?>
+
+!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -45,19 +52,15 @@
             <br>
             <button type="submit" name="submit" class="leggtilbtn">Legg til produkt</button>
         </form>
-<<<<<<< HEAD
-
-=======
     </div>
 </body>
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 <?php
 if(isset($_POST['submit'])){
 $productName = $_POST['productName'];
 $productDescription = $_POST['productDescription'];
 $price = $_POST['price'];
 
-$dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+$dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
     or die('Error connecting to MySQL server.');
 
 $query = "INSERT INTO products (productName, productDescription, price) VALUES ('$productName','$productDescription','$price')";
@@ -68,25 +71,15 @@ $result = mysqli_query($dbc, $query)
 mysqli_close($dbc);
 
 if($result){
-<<<<<<< HEAD
-    //Gyldig login]
-=======
-    //Gyldig login
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
+    //Gyldig login]     
     echo "Nytt produkt lagt til! Trykk <a href='index.php'>her</a> for å gå tilbake til hovedsiden.";
 }else{
     //Ugyldig login
     echo "Noe gikk galt, prøv igjen!";
 }
-<<<<<<< HEAD
 }
 ?>
     </div>
 </body>
-=======
 
-}
-?>
-
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
 </html>

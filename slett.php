@@ -39,7 +39,7 @@
         <div class="row">
             <?php
 
-            $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+            $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
                 or die('Error connecting to MySQL server.');
 
 
