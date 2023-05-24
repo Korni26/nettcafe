@@ -1,3 +1,10 @@
+<?php
+session_start();
+if( !isset($_SESSION["brukernavn"]) ){
+header("location:loggInPage.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,12 +106,8 @@
                     or die('Error querying database.');
 
                 mysqli_close($dbc);
-<<<<<<< HEAD
 
                 header("Refresh:0");
-
-=======
->>>>>>> 8a523e0258b35d2732856415880ea2f96323fa51
             }
 
             if (isset($_POST['deletebtn'])) {

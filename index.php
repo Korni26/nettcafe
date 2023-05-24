@@ -21,7 +21,11 @@
         </div>
 		</a>
     </div>
-    <div class="menuBox"></div>
+    <div class="menuBox">
+    <div id="faqbtn" class="adminOpt1">
+            <a href="FAQ.php">FAQ</a>
+        </div>
+    </div>
     <div class="contentBox">
 
         <div class="mainContent"></div>

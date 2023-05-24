@@ -95,6 +95,12 @@ a {
     color: #fff;
 }
 
+#faqbtn{
+    position: fixed;
+    bottom: 0;
+    border-bottom: 5px solid #02683D;
+}
+
 .menuBox .active a{
     color: #02683D;
     background-color: #fff;
@@ -230,27 +236,11 @@ tr {
     padding-right: 2vw;
 }
 
-/* .product:hover{
-    cursor: pointer;
-}
-
-.product:hover .productPicture{
-    height: 60%;
-    transition: 1s;
-}
-
-.product:hover .productDescription{
-    height: 50%;
-    top: 50%;
-    opacity: 1;
+/* FAQ siden  */
+.faqbox{
+    width: 25vw;
+    height: 25vw;
+    margin-top: 3vw;
     background-color: #ddd;
-    transition-timing-function: ease;
+    border: 5px solid #02683D;
 }
-
-.product:hover .aboutProduct{
-    opacity: 1;
-}
-
- .product:hover .productPicture{
-    transform: scale(1.1);
-} */
