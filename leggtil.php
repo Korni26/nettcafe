@@ -50,6 +50,10 @@ header("location:loggInPage.php");
             <label for="price">Produkt pris:</label>
             <input type="number" name="price">
             <br>
+            <<label for="name">Name : </label>
+      <input type="text" name="name" id = "name" required value=""> <br>
+      <label for="image">Image : </label>
+      <input type="file" name="image" id = "image" accept=".jpg, .jpeg, .png" value=""> <br>
             <button type="submit" name="submit" class="leggtilbtn">Legg til produkt</button>
         </form>
     </div>
@@ -59,11 +63,40 @@ if(isset($_POST['submit'])){
 $productName = $_POST['productName'];
 $productDescription = $_POST['productDescription'];
 $price = $_POST['price'];
+$name = $_POST["name"];
+  if($_FILES["image"]["error"] == 4){
+    echo
+    "<script> alert('Image Does Not Exist'); </script>"
+    ;
+  }
+else{
+    $fileName = $_FILES["image"]["name"];
+    $fileSize = $_FILES["image"]["size"];
+    $tmpName = $_FILES["image"]["tmp_name"];
+
+    $validImageExtension = ['jpg', 'jpeg', 'png'];
+    $imageExtension = explode('.', $fileName);
+    $imageExtension = strtolower(end($imageExtension));
+
+     if($fileSize > 1000000){
+      echo
+      "
+      <script>
+        alert('Image Size Is Too Large');
+      </script>
+      ";
+    }
+    else{
+      $newImageName = uniqid();
+      $newImageName .= '.' . $imageExtension;
+
+      move_uploaded_file($tmpName, 'multimedia/' . $newImageName);
+    }}
 
 $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
     or die('Error connecting to MySQL server.');
 
-$query = "INSERT INTO products (productName, productDescription, price) VALUES ('$productName','$productDescription','$price')";
+$query = "INSERT INTO products (productName, productDescription, price, imageName, newImageName) VALUES ('$productName','$productDescription','$price','$name', '$newImageName')";
 
 $result = mysqli_query($dbc, $query)
     or die('Error querying database.');

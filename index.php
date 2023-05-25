@@ -37,7 +37,7 @@
         $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
           or die('Error connecting to MySQL server.');
 
-        $query = "SELECT id, productName, productDescription, price from products";
+        $query = "SELECT id, productName, productDescription, price, imageName, newImageName from products";
 
         $result = mysqli_query($dbc, $query)
             or die('Error querying database.');
@@ -51,6 +51,12 @@
                 echo '<div class="prouctText">';
                     echo '<h2 class="productName">';
                     echo $row['productName'];
+                    echo '<img src="multimedia/';
+                    echo $row["image"]; 
+                    echo '" width = 200 title="';
+                    echo $row["image"];
+                    echo '">';
+                    echo $row['newImageName'];
                     echo '</h2>';
                     echo '<div class="aboutProduct">';
                         echo '<p>';
@@ -62,6 +68,9 @@
                 echo '</div>';
             echo '</div>';
         echo '</div>';
+
+        // echo '<img src="img/ echo $row["image"]; " width = 200 title="<?php echo $row["image"];">';
+
         }
 ?>
 

@@ -22,19 +22,24 @@
     </div>
     <div class="contentBox">
     <div class="row">
-        <div class="faqbox">
-            <h2>Hva er hensikten med denne nettsiden?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla doloribus obcaecati sapiente earum totam deserunt, molestiae aspernatur repudiandae voluptatem! Soluta ipsum fuga neque veritatis delectus accusantium officia incidunt quasi recusandae.</p>
-        </div>
-        <div class="faqbox">
-            <h2>Hvordan er nettsiden laget?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugit et adipisci cumque labore a eaque magni eos officia dignissimos, harum, magnam, sunt obcaecati molestias nostrum suscipit nisi eius. Temporibus?</p>
-        </div>
-        <div class="faqbox">
-            <h2>Har du andre spørsmål?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quasi eveniet velit dicta maxime debitis dolore dolorum consequuntur! Animi enim sunt dicta deserunt cupiditate quisquam voluptate? Quia mollitia iste molestiae!</p>
-        </div>
+    <details class="faqbox">
+  <summary>Hva er hensikten med denne nettsiden?</summary>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis magni nihil repellat odio cupiditate asperiores similique quis quia placeat doloribus fugiat explicabo earum, consectetur ex. Laboriosam enim commodi quam veniam!</p>
+</details>
+
+<details class="faqbox">
+  <summary>Hvordan er nettsiden laget?</summary>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis magni nihil repellat odio cupiditate asperiores similique quis quia placeat doloribus fugiat explicabo earum, consectetur ex. Laboriosam enim commodi quam veniam!</p>
+</details>
+
+<details class="faqbox">
+  <summary>Har du andre spørsmål?</summary>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis magni nihil repellat odio cupiditate asperiores similique quis quia placeat doloribus fugiat explicabo earum, consectetur ex. Laboriosam enim commodi quam veniam!</p>
+</details>
     </div>
+
+
 </div>
+<script src="main.js"></script>
 </body>
 </html>
