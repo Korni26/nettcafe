@@ -159,15 +159,7 @@ a {
     min-height: 90vw;
 }
 
-.mainContent{
-    width: 100%;
-    height: 30vw;
-   background-image: url(multimedia/muffin-gf361af4f3_1280.jpg);
-   background-size: cover;
-   background-position: 0 50%;
-   background-repeat: no-repeat;
-}
-
+/* første store bilde på siden  */
 .mainContent {
     width: 100%;
     height: 30vw;
@@ -177,6 +169,7 @@ a {
     background-repeat: no-repeat;
 }
 
+/* produktene  */
 .row {
     min-width: 10vh     ;
     display: flex;
@@ -195,7 +188,13 @@ a {
 .productPicture {
     width: 100%;
     height: 75%;
-    background-color: #555;
+    background-color: #02683D;
+}
+
+.productPicture img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .productName {

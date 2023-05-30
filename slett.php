@@ -50,14 +50,17 @@ header("location:loggInPage.php");
     require_once 'dbConfig.php'; 
  
     // Get image data from database 
-    $result = $db->query("SELECT id, productName, productDescription, price from images"); 
+    $result = $db->query("SELECT id, productName, productDescription, price, image from images"); 
 
 
 
             foreach ($result as $row) :
                 echo '<div class="product">';
-                echo '<div class="productPicture"></div>';
-                echo '<div class="productDescription">';
+                echo '<div class="productPicture">';
+                echo '<img src="data:image/jpg;charset=utf8;base64,';
+                echo base64_encode($row['image']);
+                echo '"/>';
+                echo '</div>';                echo '<div class="productDescription">';
                 echo '<div class="prouctText">';
                 echo '<h2 class="productName">';
                 echo $row['productName'];
@@ -77,8 +80,6 @@ header("location:loggInPage.php");
                 echo $row['id'];
                 echo '" class="addToCartBtn" value="Slett"/>';
                 echo '</form>';
-                // echo '<div class="addCartBtnWrap"><button class="addToCartBtn">Slett</button>';
-                // echo '</div>';
                 echo '</div>';
                 echo '</div>';
 
@@ -88,13 +89,6 @@ header("location:loggInPage.php");
 
             function deletebtn($id)
             {
-
-    //                 // Include the database configuration file  
-    // require_once 'dbConfig.php'; 
- 
-    // // Get image data from database 
-    // $result = $db->query("DELETE FROM products WHERE id='$id'"); 
-
 
                 $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
                     or die('Error connecting to MySQL server.');

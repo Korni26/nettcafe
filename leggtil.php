@@ -40,7 +40,7 @@ header("location:loggInPage.php");
     </div>
 
     <div class="contentBox">
-        <form class="loggInForm" method="post" enctype="multipart/form-data" action="upload.php">
+        <form class="loggInForm" method="post" enctype="multipart/form-data">
         <!-- <form class="loggInForm" method="post"> -->
 
             <label for="productName">Produkt navn:</label>
@@ -57,32 +57,41 @@ header("location:loggInPage.php");
             <br>
             <button type="submit" name="submit" class="leggtilbtn" value="Upload">Legg til produkt</button>
         </form>
-    </div>
-</body>
 <?php
-if(isset($_POST['submit'])){
-$productName = $_POST['productName'];
+
+// Include the database configuration file  
+require_once 'dbConfig.php'; 
+ 
+// If file upload form is submitted 
+if(isset($_POST["submit"])){ 
+    $productName = $_POST['productName'];
 $productDescription = $_POST['productDescription'];
 $price = $_POST['price'];
-
-$dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
-    or die('Error connecting to MySQL server.');
-
-$query = "INSERT INTO products (productName, productDescription, price) VALUES ('$productName','$productDescription','$price')";
-
-$result = mysqli_query($dbc, $query)
-    or die('Error querying database.');
-
-mysqli_close($dbc);
-
-if($result){
-    //Gyldig login]     
-    echo "Nytt produkt lagt til! Trykk <a href='index.php'>her</a> for å gå tilbake til hovedsiden.";
-}else{
-    //Ugyldig login
-    echo "Noe gikk galt, prøv igjen!";
-}
-}
+    if(!empty($_FILES["image"]["name"])) { 
+        // Get file info 
+        $fileName = basename($_FILES["image"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+         
+        // Allow certain file formats 
+        $allowTypes = array('jpg','png','jpeg','gif'); 
+        if(in_array($fileType, $allowTypes)){ 
+            $image = $_FILES['image']['tmp_name']; 
+            $imgContent = addslashes(file_get_contents($image)); 
+         
+            $insert = $db->query("INSERT INTO images (productName, productDescription, price, image, created) VALUES ('$productName','$productDescription','$price','$imgContent', NOW())"); 
+             
+            if($insert){ 
+                echo "Nytt produkt lagt til! Trykk <a href='index.php'>her</a> for å gå tilbake til hovedsiden.";
+            }else{ 
+                echo  "File upload failed, please try again."; 
+            }  
+        }else{ 
+            echo 'Sorry, feil fil format på bildet'; 
+        } 
+    }else{ 
+        echo 'Velg et bildet til produkten'; 
+    } 
+} 
 ?>
     </div>
 </body>
