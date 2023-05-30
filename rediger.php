@@ -52,15 +52,11 @@ header("location:loggInPage.php");
                 </tr>
                 <?php
 
-                $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
-                    or die('Error connecting to MySQL server.');
-
-                $query = "SELECT id, productName, productDescription, price from products";
-
-                $result = mysqli_query($dbc, $query)
-                    or die('Error querying database.');
-
-                mysqli_close($dbc);
+    // Include the database configuration file  
+    require_once 'dbConfig.php'; 
+ 
+    // Get image data from database 
+    $result = $db->query("SELECT id, productName, productDescription, price from images"); 
 
                 foreach ($result as $row) {
                     echo '<tr>';
@@ -137,10 +133,17 @@ header("location:loggInPage.php");
             $productDescription = $_POST['productDescription'];
             $price = $_POST['price'];
 
-            $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+//             // Include the database configuration file  
+// require_once 'dbConfig.php'; 
+ 
+// // Get image data from database 
+// $result = $db->query("UPDATE products SET productName = '$productName', productDescription = '$productDescription', price = '$price' WHERE id = '$id';"); 
+
+
+            $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
                 or die('Error connecting to MySQL server.');
 
-            $query = " UPDATE products SET productName = '$productName', productDescription = '$productDescription', price = '$price' WHERE id = '$id';";
+            $query = " UPDATE images SET productName = '$productName', productDescription = '$productDescription', price = '$price' WHERE id = '$id';";
 
             $result = mysqli_query($dbc, $query)
                 or die('Error querying database.');

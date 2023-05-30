@@ -42,15 +42,11 @@ header("location:loggInPage.php");
 
 <?php
 
-        $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
-          or die('Error connecting to MySQL server.');
-
-        $query = "SELECT id, productName, productDescription, price from products";
-
-        $result = mysqli_query($dbc, $query)
-            or die('Error querying database.');
-
-        mysqli_close($dbc);
+// Include the database configuration file  
+require_once 'dbConfig.php'; 
+ 
+// Get image data from database 
+$result = $db->query("SELECT id, productName, productDescription, price from images"); 
 
         foreach($result as $row){
             echo '<div class="product">';

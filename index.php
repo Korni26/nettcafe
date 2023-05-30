@@ -11,18 +11,18 @@
 
 <body>
 
-<a href="index.php">
-<div class="logo"></div>
+    <a href="index.php">
+        <div class="logo"></div>
     </a>
     <div class="topBar">
-	<a href="loggInPage.php">
-        <div class="loggInBtn">
-            <p>logg in</p>
-        </div>
-		</a>
+        <a href="loggInPage.php">
+            <div class="loggInBtn">
+                <p>logg in</p>
+            </div>
+        </a>
     </div>
     <div class="menuBox">
-    <div id="faqbtn" class="adminOpt1">
+        <div id="faqbtn" class="adminOpt1">
             <a href="FAQ.php">FAQ</a>
         </div>
     </div>
@@ -32,17 +32,14 @@
 
         <div class="row">
 
-        <?php
+            <?php
 
-        $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
-          or die('Error connecting to MySQL server.');
+// Include the database configuration file  
+require_once 'dbConfig.php'; 
+ 
+// Get image data from database 
+$result = $db->query("SELECT id, productName, productDescription, price from images"); 
 
-        $query = "SELECT id, productName, productDescription, price, imageName, newImageName from products";
-
-        $result = mysqli_query($dbc, $query)
-            or die('Error querying database.');
-
-        mysqli_close($dbc);
 
         foreach($result as $row){
             echo '<div class="product">';
@@ -51,12 +48,6 @@
                 echo '<div class="prouctText">';
                     echo '<h2 class="productName">';
                     echo $row['productName'];
-                    echo '<img src="multimedia/';
-                    echo $row["image"]; 
-                    echo '" width = 200 title="';
-                    echo $row["image"];
-                    echo '">';
-                    echo $row['newImageName'];
                     echo '</h2>';
                     echo '<div class="aboutProduct">';
                         echo '<p>';

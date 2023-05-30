@@ -19,7 +19,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
     direction:rtl; 
-    position: fixed;
+    left: 0;
+    position: absolute;
     left: 0;
     background: #02683D;
 }

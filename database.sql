@@ -1,22 +1,18 @@
-CREATE TABLE products (
-    id INT AUTO_INCREMENT PRIMARY KEY, 
-    productName VARCHAR(255), 
-    productDescription VARCHAR(255), 
-    price VARCHAR(11),
-    imageName VARCHAR(255)
-    ); 
+CREATE TABLE images (
+id INT AUTO_INCREMENT PRIMARY KEY,
+productName VARCHAR(255),
+productDescription VARCHAR(255),
+price VARCHAR(11),
+`image` longblob NOT NULL,
+`created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 
 CREATE TABLE adminuser (
-    id INT AUTO_INCREMENT PRIMARY KEY, 
-    brukernavn VARCHAR(255), 
-    passord VARCHAR(255)
-    ); 
+id INT AUTO_INCREMENT PRIMARY KEY,
+brukernavn VARCHAR(255),
+passord VARCHAR(255)
+);
 
---  CREATE TABLE reports (
---     id INT AUTO_INCREMENT PRIMARY KEY, 
---     navn VARCHAR(255), 
---     mail VARCHAR(255),
---     content VARCHAR(255)
---     );    
 
-    INSERT INTO adminuser (brukernavn, passord) VALUES ('brukernavn', 'passord')
+INSERT INTO adminuser (brukernavn, passord) VALUES ('brukernavn', 'passord')

@@ -45,17 +45,11 @@ if(isset($_POST['submit'])){
     $brukernavn = $_POST['brukernavn'];
     $passord = $_POST['passord'];
 
-    $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
-        or die('Error connecting to MySQL server');
-
-    $query = "SELECT brukernavn, passord from adminuser where brukernavn='$brukernavn' and passord='$passord'";
-
-    $result = mysqli_query($dbc, $query)
-        or die('Error querying database.');
-
-    mysqli_close($dbc);
-
-    // var_dump($result);
+    // Include the database configuration file  
+require_once 'dbConfig.php'; 
+ 
+// Get image data from database 
+$result = $db->query("SELECT brukernavn, passord from adminuser where brukernavn='$brukernavn' and passord='$passord'"); 
 
     if($result->num_rows > 0){
         session_start();

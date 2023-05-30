@@ -46,18 +46,11 @@ header("location:loggInPage.php");
         <div class="row">
             <?php
 
-            $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
-                or die('Error connecting to MySQL server.');
-
-
-
-
-            $query = "SELECT id, productName, productDescription, price from products";
-
-            $result = mysqli_query($dbc, $query)
-                or die('Error querying database.');
-
-            mysqli_close($dbc);
+    // Include the database configuration file  
+    require_once 'dbConfig.php'; 
+ 
+    // Get image data from database 
+    $result = $db->query("SELECT id, productName, productDescription, price from images"); 
 
 
 
@@ -96,11 +89,17 @@ header("location:loggInPage.php");
             function deletebtn($id)
             {
 
+    //                 // Include the database configuration file  
+    // require_once 'dbConfig.php'; 
+ 
+    // // Get image data from database 
+    // $result = $db->query("DELETE FROM products WHERE id='$id'"); 
 
-                $dbc = mysqli_connect('localhost', 'root', '', 'adminbrukere')
+
+                $dbc = mysqli_connect('localhost', 'root', '', 'nettcafedb')
                     or die('Error connecting to MySQL server.');
 
-                $query = "DELETE FROM products WHERE id='$id'";
+                $query = "DELETE FROM images WHERE id='$id'";
 
                 $result = mysqli_query($dbc, $query)
                     or die('Error querying database.');
