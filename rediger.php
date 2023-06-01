@@ -21,11 +21,25 @@ header("location:loggInPage.php");
         <div class="logo"></div>
     </a>
     <div class="topBar">
-        <a href="loggInPage.php">
-            <div class="loggInBtn">
-                <p>logg in</p>
-            </div>
-        </a>
+    <?php
+if( isset($_SESSION["brukernavn"]) ){
+    echo '<a href="adminside.php">';
+    echo '<div class="loggInBtn">';
+    echo '<p>';
+    echo 'adminside';
+    echo '</p>';
+    echo '</div>';
+    echo '</a>';
+} else{
+    echo '<a href="loggInPage.php">';
+    echo '<div class="loggInBtn">';
+    echo '<p>';
+    echo 'Logg inn';
+    echo '</p>';
+    echo '</div>';
+    echo '</a>';
+}
+?>
     </div>
     <div class="menuBox">
         <div class="adminOpt1">
@@ -85,9 +99,6 @@ header("location:loggInPage.php");
                     echo '<input type="submit" name="';
                     echo $row['id'];
                     echo '" class="addToCartBtn" value="Rediger"/>';
-
-                    echo '<input type="submit" name="
-                " class="addToCartBtn" value="Rediger"/>';
 
                     echo '</form>';
                     echo '</td>';

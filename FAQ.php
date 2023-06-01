@@ -12,11 +12,26 @@
 <div class="logo"></div>
     </a>
     <div class="topBar">
-	<a href="loggInPage.php">
-        <div class="loggInBtn">
-            <p>logg ut</p>
-        </div>
-		</a>
+    <?php
+    session_start();
+if( isset($_SESSION["brukernavn"]) ){
+    echo '<a href="adminside.php">';
+    echo '<div class="loggInBtn">';
+    echo '<p>';
+    echo 'adminside';
+    echo '</p>';
+    echo '</div>';
+    echo '</a>';
+} else{
+    echo '<a href="loggInPage.php">';
+    echo '<div class="loggInBtn">';
+    echo '<p>';
+    echo 'Logg inn';
+    echo '</p>';
+    echo '</div>';
+    echo '</a>';
+}
+?>
     </div>
     <div class="menuBox">
     </div>

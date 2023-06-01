@@ -6,29 +6,19 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow: overlay;
     min-height: 120vh;
 }
 
 ::-webkit-scrollbar {
-    direction: rtl;
-    left: 0;
-    background-color: #fff;
+    direction: ltr; 
+    background-color: transparent;
     margin-top: 10vw;
 }
 
 ::-webkit-scrollbar-thumb {
-    direction:rtl; 
-    left: 0;
-    position: absolute;
-    left: 0;
     background: #02683D;
 }
-
-.scrollable-div::-webkit-scrollbar {
-    position: absolute;
-    left: 0;
- }
 
 a {
     text-decoration: none;
