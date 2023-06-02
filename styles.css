@@ -6,7 +6,7 @@
 }
 
 body {
-    overflow: overlay;
+    overflow-x: hidden;
     min-height: 120vh;
 }
 
