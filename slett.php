@@ -114,7 +114,7 @@ if( isset($_SESSION["brukernavn"]) ){
 
                 mysqli_close($dbc);
 
-                header("Refresh:0");
+                
             }
 
             if (isset($_POST['deletebtn'])) {
@@ -122,7 +122,7 @@ if( isset($_SESSION["brukernavn"]) ){
                 $id = $_POST['id'];
                 deletebtn($id);
                 
-
+                header("Refresh:0");
             }
 
             ?>

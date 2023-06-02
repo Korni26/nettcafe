@@ -57,32 +57,30 @@ require_once 'dbConfig.php';
 $result = $db->query("SELECT id, productName, productDescription, price, image from images"); 
 
 
-        foreach($result as $row){
-            echo '<div class="product">';
-            echo '<div class="productPicture">';
-            echo '<img src="data:image/jpg;charset=utf8;base64,';
-            echo base64_encode($row['image']);
-            echo '"/>';
-            echo '</div>';
-            echo '<div class="productDescription">';
-                echo '<div class="prouctText">';
-                    echo '<h2 class="productName">';
-                    echo $row['productName'];
-                    echo '</h2>';
-                    echo '<div class="aboutProduct">';
-                        echo '<p>';
-                        echo $row['productDescription'];
-                        echo '</p>';
-                    echo '</div>';
-                echo '</div>';
-                echo '<div class="addCartBtnWrap"><button class="addToCartBtn">add to cart</button>';
-                echo '</div>';
+foreach($result as $row){
+    echo '<div class="product">';
+    echo '<div class="productPicture">';
+    echo '<img src="data:image/jpg;charset=utf8;base64,';
+    echo base64_encode($row['image']);
+    echo '"/>';
+    echo '</div>';
+    echo '<div class="productDescription">';
+        echo '<div class="prouctText">';
+            echo '<h2 class="productName">';
+            echo $row['productName'];
+            echo '</h2>';
+            echo '<div class="aboutProduct">';
+                echo '<p>';
+                echo $row['productDescription'];
+                echo '</p>';
             echo '</div>';
         echo '</div>';
-
-        // echo '<img src="img/ echo $row["image"]; " width = 200 title="<?php echo $row["image"];">';
-
-        }
+        echo '<div class="addCartBtnWrap"><button class="addToCartBtn">';
+        echo $row['price'];
+        echo ' kr </div>';
+    echo '</div>';
+echo '</div>';
+}
 ?>
 
         </div>

@@ -172,7 +172,6 @@ a {
     width: 25vw;
     height: 25vw;
     margin-top: 3vw;
-    background-color: #ddd;
 }
 
 .productPicture {
@@ -196,10 +195,31 @@ a {
 
 .productDescription {
     z-index: 1;
+    height: 25%;
+    bottom: 0;
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 25%;
+    background-color: #ddd;
+    transition: 1s;
+}
+
+.product:hover .productDescription{
+    height: 50%;
+    bottom: 25%;
+    transition: 1s;
+}
+
+.product:hover .productPicture img{
+    /* opacity: 0.5; */
+    filter: brightness(50%);
+    transition: 1s;
+}
+
+
+.product:hover .aboutProduct{
+    opacity: 1;
     transition: 1s;
 }
 
@@ -243,12 +263,18 @@ tr {
 
 /* FAQ siden  */
 
+.faqrow{
+    min-height: 20vh;
+    margin-bottom: 5vh;
+}
+
 summary{
     font-size: 2vh;
 }
 
 .faqbox{
     width: 25vw;
+    height: 10vh;
     min-height: 5vw;
     padding: 1vw;
     margin-top: 3vw;
@@ -258,4 +284,20 @@ summary{
     text-align: justify;
     background-color: #ddd;
     border: 5px solid #02683D;
+}
+
+details p{
+    margin-top: 2vh;
+}
+
+.faqbox[open] {
+    height: 15vh;
+}
+
+.faqForm *{
+    width: 25vw;
+}
+
+.bigInput{
+    height: 15vh;
 }

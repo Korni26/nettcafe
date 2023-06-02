@@ -1,3 +1,5 @@
+CREATE DATABASE nettcafedb;
+
 CREATE TABLE images (
 id INT AUTO_INCREMENT PRIMARY KEY,
 productName VARCHAR(255),
@@ -14,5 +16,12 @@ brukernavn VARCHAR(255),
 passord VARCHAR(255)
 );
 
+CREATE TABLE FAQ (
+id INT AUTO_INCREMENT PRIMARY KEY,
+Email VARCHAR(255),
+Navn VARCHAR(255),
+question VARCHAR(255)
+);
 
-INSERT INTO adminuser (brukernavn, passord) VALUES ('brukernavn', 'passord')
+
+INSERT INTO adminuser (brukernavn, passord) VALUES ('brukernavn', 'passord');

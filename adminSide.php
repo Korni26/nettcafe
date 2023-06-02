@@ -39,18 +39,22 @@ header("location:loggInPage.php");
     <div class="contentBox">
     <div class="row">
 
-
-<?php
+    <?php
 
 // Include the database configuration file  
 require_once 'dbConfig.php'; 
  
 // Get image data from database 
-$result = $db->query("SELECT id, productName, productDescription, price from images"); 
+$result = $db->query("SELECT id, productName, productDescription, price, image from images"); 
+
 
         foreach($result as $row){
             echo '<div class="product">';
-            echo '<div class="productPicture"></div>';
+            echo '<div class="productPicture">';
+            echo '<img src="data:image/jpg;charset=utf8;base64,';
+            echo base64_encode($row['image']);
+            echo '"/>';
+            echo '</div>';
             echo '<div class="productDescription">';
                 echo '<div class="prouctText">';
                     echo '<h2 class="productName">';
@@ -62,8 +66,9 @@ $result = $db->query("SELECT id, productName, productDescription, price from ima
                         echo '</p>';
                     echo '</div>';
                 echo '</div>';
-                echo '<div class="addCartBtnWrap"><button class="addToCartBtn">add to cart</button>';
-                echo '</div>';
+                echo '<div class="addCartBtnWrap"><button class="addToCartBtn">';
+                echo $row['price'];
+                echo ' kr </div>';
             echo '</div>';
         echo '</div>';
         }
